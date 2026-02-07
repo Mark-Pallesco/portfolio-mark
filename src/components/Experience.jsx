@@ -1,7 +1,23 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const item = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0 }
+};
 
 const ExperienceItem = ({ role, company, location, year, responsibilities }) => (
-    <div className="relative pl-5 pb-6 border-l border-neutral-200 dark:border-neutral-800 last:border-0 last:pb-0 transition-colors duration-200">
+    <motion.div variants={item} className="relative pl-5 pb-6 border-l border-neutral-200 dark:border-neutral-800 last:border-0 last:pb-0 transition-colors duration-200">
         {/* Timeline Dot */}
         <div className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 bg-white dark:bg-neutral-950 border-2 border-neutral-300 dark:border-neutral-700 rounded-sm transition-colors duration-200"></div>
 
@@ -20,7 +36,7 @@ const ExperienceItem = ({ role, company, location, year, responsibilities }) => 
                 </li>
             ))}
         </ul>
-    </div>
+    </motion.div>
 );
 
 const Experience = () => {
@@ -54,13 +70,20 @@ const Experience = () => {
             <h2 className="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral-50 tracking-tight transition-colors duration-200">
                 Experience
             </h2>
-            <div className="mt-2">
+            <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-50px" }}
+                className="mt-2"
+            >
                 {experiences.map((exp, index) => (
                     <ExperienceItem key={index} {...exp} />
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
 
 export default Experience;
+

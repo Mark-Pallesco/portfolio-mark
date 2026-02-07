@@ -1,10 +1,13 @@
 import React from 'react';
+import FadeIn from './components/FadeIn';
 import Layout from './components/Layout';
 import Header from './components/Header';
 import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import Socials from './components/Socials';
+import Chatbot from './components/Chatbot';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,14 +21,16 @@ function App() {
 
           {/* About Section */}
           <section>
-            <div className="prose prose-neutral dark:prose-invert max-w-none text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal text-sm transition-colors duration-200">
-              <p className="mb-3">
-                I am a Web Developer specializing in building high-impact platforms for keynote speakers and businesses, turning clean designs into functional, high-performance websites across WordPress, Webflow, and Framer.
-              </p>
-              <p>
-                I bridge the gap between aesthetic branding and technical execution, focusing on seamless user experiences and scalable eCommerce solutions. Currently, I am expanding my expertise by exploring AI-driven development and automation to build faster, smarter, and more future-ready digital experiences.
-              </p>
-            </div>
+            <FadeIn delay={0.2}>
+              <div className="prose prose-neutral dark:prose-invert max-w-none text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal text-sm transition-colors duration-200">
+                <p className="mb-3">
+                  I am a Web Developer specializing in building high-impact platforms for keynote speakers and businesses, turning clean designs into functional, high-performance websites across WordPress, Webflow, and Framer.
+                </p>
+                <p>
+                  I bridge the gap between aesthetic branding and technical execution, focusing on seamless user experiences and scalable eCommerce solutions. Currently, I am expanding my expertise by exploring AI-driven development and automation to build faster, smarter, and more future-ready digital experiences.
+                </p>
+              </div>
+            </FadeIn>
           </section>
 
           <TechStack />
@@ -38,10 +43,13 @@ function App() {
           <Experience />
 
           <Education />
+
+          <Socials />
         </div>
       </div>
 
       <Footer />
+      <Chatbot />
     </Layout>
   );
 }

@@ -1,19 +1,43 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { opacity: 1, scale: 1 }
+};
 
 const TechGroup = ({ title, items }) => (
     <div className="mb-4">
         <h3 className="text-xs font-bold text-neutral-900 dark:text-neutral-100 mb-2 uppercase tracking-wide transition-colors duration-200">{title}</h3>
-        <div className="flex flex-wrap gap-1.5">
+        <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-10px" }}
+            className="flex flex-wrap gap-1.5"
+        >
             {items.map((item) => (
-                <span
+                <motion.span
+                    variants={itemVariant}
+                    whileHover={{ scale: 1.05 }}
                     key={item}
-                    className="px-2.5 py-1 bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium text-xs rounded-md border border-neutral-100 dark:border-neutral-700 transition-colors duration-200"
+                    className="px-2.5 py-1 bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium text-xs rounded-md border border-neutral-100 dark:border-neutral-700 transition-colors duration-200 cursor-default"
                 >
                     {item}
-                </span>
+                </motion.span>
             ))}
-        </div>
+        </motion.div>
     </div>
 );
 
@@ -48,3 +72,4 @@ const TechStack = () => {
 };
 
 export default TechStack;
+
