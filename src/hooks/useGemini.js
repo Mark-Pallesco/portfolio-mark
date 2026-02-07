@@ -8,7 +8,7 @@ export const useGemini = () => {
     const [messages, setMessages] = useState([
         {
             role: "model",
-            text: "Hi! I'm Mark's portfolio assistant. Ask me anything about his skills, experience, or projects!"
+            text: "Hi! I'm Mark's AI Assistant. Ask me anything about his skills, experience, or projects!"
         }
     ]);
     const [loading, setLoading] = useState(false);

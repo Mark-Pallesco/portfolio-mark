@@ -6,6 +6,7 @@ import { useGemini } from "../hooks/useGemini";
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState("");
+    const [showTooltip, setShowTooltip] = useState(false);
     const { messages, sendMessage, loading } = useGemini();
     const messagesEndRef = useRef(null);
 
@@ -15,9 +16,18 @@ const Chatbot = () => {
 
     useEffect(() => {
         if (isOpen) {
+            setShowTooltip(false);
             scrollToBottom();
         }
     }, [messages, isOpen]);
+
+    // Show tooltip after 2 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (!isOpen) setShowTooltip(true);
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, [isOpen]);
 
     const handleSend = (e) => {
         e.preventDefault();
@@ -69,8 +79,8 @@ const Chatbot = () => {
                                         }`}
                                 >
                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === "user"
-                                            ? "bg-neutral-900 dark:bg-neutral-100"
-                                            : "bg-blue-100 dark:bg-blue-900/30"
+                                        ? "bg-neutral-900 dark:bg-neutral-100"
+                                        : "bg-blue-100 dark:bg-blue-900/30"
                                         }`}>
                                         {msg.role === "user" ? (
                                             <User className="w-4 h-4 text-white dark:text-neutral-900" />
@@ -79,8 +89,8 @@ const Chatbot = () => {
                                         )}
                                     </div>
                                     <div className={`p-3 rounded-2xl text-sm leading-relaxed max-w-[80%] ${msg.role === "user"
-                                            ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-tr-none"
-                                            : "bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-tl-none shadow-sm"
+                                        ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-tr-none"
+                                        : "bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-tl-none shadow-sm"
                                         }`}>
                                         {msg.text}
                                     </div>
@@ -124,18 +134,53 @@ const Chatbot = () => {
                 )}
             </AnimatePresence>
 
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all"
-            >
-                {isOpen ? (
-                    <X className="w-6 h-6" />
-                ) : (
-                    <MessageSquare className="w-6 h-6" />
+            {/* Tooltip / Greeting Pulse */}
+            <AnimatePresence>
+                {showTooltip && !isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: 20, scale: 0.9 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x: 20, scale: 0.9 }}
+                        className="absolute bottom-20 right-0 mr-2 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-4 py-3 rounded-2xl shadow-xl border border-neutral-100 dark:border-neutral-700 whitespace-nowrap z-40 max-w-[250px]"
+                    >
+                        <div className="relative">
+                            <div className="font-medium text-sm">Need a quick summary?</div>
+                            <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Ask my AI assistant! ✨</div>
+                            {/* Arrow */}
+                            <div className="absolute -bottom-[20px] right-4 w-4 h-4 bg-white dark:bg-neutral-800 border-r border-b border-neutral-100 dark:border-neutral-700 transform rotate-45"></div>
+                            <button
+                                onClick={() => setShowTooltip(false)}
+                                className="absolute -top-5 -right-2 p-1 bg-neutral-200 dark:bg-neutral-700 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors"
+                            >
+                                <X className="w-3 h-3 text-neutral-600 dark:text-neutral-300" />
+                            </button>
+                        </div>
+                    </motion.div>
                 )}
-            </motion.button>
+            </AnimatePresence>
+
+            {/* Toggle Button with Notification Badge & Pulse */}
+            <div className="relative group">
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="relative w-14 h-14 bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all z-50 overflow-visible"
+                >
+
+
+                    {isOpen ? (
+                        <X className="w-6 h-6 relative z-10" />
+                    ) : (
+                        <>
+                            <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-4 w-4">
+                                <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-500 border-2 border-white dark:border-neutral-900"></span>
+                            </span>
+                            <MessageSquare className="w-6 h-6 relative z-10" />
+                        </>
+                    )}
+                </motion.button>
+            </div>
         </div>
     );
 };
