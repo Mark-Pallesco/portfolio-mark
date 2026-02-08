@@ -38,7 +38,7 @@ const Testimonials = () => {
                     <Quote className="w-8 h-8 opacity-50" />
                 </div>
 
-                <div className="relative z-10 min-h-[160px] flex items-center">
+                <div className="relative z-10 min-h-[220px] flex items-center">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -72,8 +72,8 @@ const Testimonials = () => {
                         <div
                             key={index}
                             className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${index === currentIndex
-                                    ? "bg-neutral-800 dark:bg-neutral-200"
-                                    : "bg-neutral-300 dark:bg-neutral-700"
+                                ? "bg-neutral-800 dark:bg-neutral-200"
+                                : "bg-neutral-300 dark:bg-neutral-700"
                                 }`}
                         />
                     ))}

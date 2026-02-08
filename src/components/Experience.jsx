@@ -34,27 +34,33 @@ const ExperienceItem = ({ role, company, location, year }) => (
 const Experience = () => {
     const experiences = [
         {
-            role: "Web Developer/Designer",
-            company: "Freelance",
-            location: "",
+            role: "Founder & Lead Web Developer",
+            company: "Fivision WebWorks",
+            location: "WFH Setup",
             year: "Jan 2026 – Present"
         },
         {
             role: "Web Developer",
             company: "Archicoders",
-            location: "",
+            location: "Imus City",
             year: "Nov 2023 – Jan 2026"
         },
         {
-            role: "Fullstack Developer",
+            role: "Fullstack Web Developer",
             company: "Klued",
-            location: "",
+            location: "Dasmarinas City",
             year: "Oct 2023 – Nov 2023"
+        },
+        {
+            role: "BS Information Technology",
+            company: "Technological University of the Philippines",
+            location: "Makati City",
+            year: "Aug 2019 – Aug 2023"
         },
         {
             role: "Web Developer Intern",
             company: "Hacktiv Colab Inc.",
-            location: "",
+            location: "Makati City",
             year: "Mar 2023 – Jun 2023"
         }
     ];
