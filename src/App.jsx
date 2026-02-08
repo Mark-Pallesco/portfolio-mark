@@ -2,6 +2,7 @@ import React from 'react';
 import FadeIn from './components/FadeIn';
 import Layout from './components/Layout';
 import Header from './components/Header';
+import Testimonials from './components/Testimonials';
 import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -39,6 +40,7 @@ function App() {
 
         {/* Right Column (Timeline) - Spans 1 column */}
         <div className="space-y-8">
+          <Testimonials />
           <Experience />
           <Socials />
         </div>
