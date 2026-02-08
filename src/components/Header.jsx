@@ -1,9 +1,19 @@
-import React from 'react';
-import { BadgeCheck, Calendar, Mail, BookOpen, ArrowRight, Phone } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { BadgeCheck, Calendar, Mail, BookOpen, ArrowRight, Phone, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/mark img.png';
 
 const Header = () => {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://server.fillout.com/embed/v1/';
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        }
+    }, []);
+
     return (
         <div className="mb-8">
             <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -65,14 +75,31 @@ const Header = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
-                        <motion.a
+                        <motion.button
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.7 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            href="mailto:angelomark31@gmail.com"
                             className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 px-5 py-2 rounded-lg text-xs font-medium hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors"
+                            data-fillout-id="f9XUyyBVKuus"
+                            data-fillout-embed-type="popup"
+                            data-fillout-dynamic-resize
+                            data-fillout-inherit-parameters
+                            data-fillout-popup-size="medium"
+                        >
+                            <Briefcase className="w-3.5 h-3.5" />
+                            <span>Work With Me</span>
+                        </motion.button>
+
+                        <motion.a
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.75 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="mailto:angelomark31@gmail.com"
+                            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 px-5 py-2 rounded-lg text-xs font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                         >
                             <Mail className="w-3.5 h-3.5" />
                             <span>Send Email</span>

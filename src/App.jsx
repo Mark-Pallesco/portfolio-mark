@@ -5,7 +5,6 @@ import Header from './components/Header';
 import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Education from './components/Education';
 import Socials from './components/Socials';
 import Chatbot from './components/Chatbot';
 import Footer from './components/Footer';
@@ -41,9 +40,6 @@ function App() {
         {/* Right Column (Timeline) - Spans 1 column */}
         <div className="space-y-8">
           <Experience />
-
-          <Education />
-
           <Socials />
         </div>
       </div>

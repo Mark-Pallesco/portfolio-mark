@@ -42,7 +42,18 @@ const ExperienceItem = ({ role, company, location, year, responsibilities }) => 
 const Experience = () => {
     const experiences = [
         {
-            role: "Junior Web Developer",
+            role: "Web Developer/Designer",
+            company: "Freelance",
+            location: "",
+            year: "Jan 2026 – Present",
+            responsibilities: [
+                "Building high-performance, responsive websites across WordPress, Webflow, and Framer tailored to client goals.",
+                "Handling the full project lifecycle, from initial client discovery and onboarding to final delivery and support.",
+                "Designing clean, high-converting layouts that optimize user journeys and boost personal branding authority."
+            ]
+        },
+        {
+            role: "Web Developer",
             company: "Archicoders",
             location: "",
             year: "Nov 2023 – Jan 2026",
