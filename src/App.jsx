@@ -40,8 +40,8 @@ function App() {
 
         {/* Right Column (Timeline) - Spans 1 column */}
         <div className="space-y-8">
-          <Testimonials />
           <Experience />
+          <Testimonials />
           <Socials />
         </div>
       </div>
