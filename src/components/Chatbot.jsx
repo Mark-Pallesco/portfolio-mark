@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
 import { MessageSquare, X, Send, Bot, User, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGemini } from "../hooks/useGemini";
+import markImg from "../assets/mark img.png";
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -49,11 +51,11 @@ const Chatbot = () => {
                         {/* Header */}
                         <div className="p-4 border-b border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 flex justify-between items-center">
                             <div className="flex items-center gap-2">
-                                <div className="p-1.5 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                                    <Bot className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                <div className="relative w-8 h-8 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                                    <img src={markImg} alt="Mark" className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-sm text-neutral-900 dark:text-neutral-100">Portfolio Assistant</h3>
+                                    <h3 className="font-bold text-sm text-neutral-900 dark:text-neutral-100">Mark's AI Assistant</h3>
                                     <p className="text-[10px] text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
                                         <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                                         Online
@@ -78,21 +80,30 @@ const Chatbot = () => {
                                     className={`flex items-start gap-2.5 ${msg.role === "user" ? "flex-row-reverse" : ""
                                         }`}
                                 >
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === "user"
+                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ${msg.role === "user"
                                         ? "bg-neutral-900 dark:bg-neutral-100"
-                                        : "bg-blue-100 dark:bg-blue-900/30"
+                                        : "border border-neutral-200 dark:border-neutral-700"
                                         }`}>
                                         {msg.role === "user" ? (
                                             <User className="w-4 h-4 text-white dark:text-neutral-900" />
                                         ) : (
-                                            <Bot className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                                            <img src={markImg} alt="AI" className="w-full h-full object-cover" />
                                         )}
                                     </div>
                                     <div className={`p-3 rounded-2xl text-sm leading-relaxed max-w-[80%] ${msg.role === "user"
                                         ? "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-tr-none"
                                         : "bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-tl-none shadow-sm"
                                         }`}>
-                                        {msg.text}
+                                        <ReactMarkdown
+                                            components={{
+                                                p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                ul: ({ node, ...props }) => <ul className="list-disc ml-4 mb-2 last:mb-0" {...props} />,
+                                                li: ({ node, ...props }) => <li className="mb-0.5" {...props} />,
+                                                strong: ({ node, ...props }) => <strong className="font-bold text-neutral-900 dark:text-neutral-100" {...props} />,
+                                            }}
+                                        >
+                                            {msg.text}
+                                        </ReactMarkdown>
                                     </div>
                                 </motion.div>
                             ))}
@@ -102,8 +113,8 @@ const Chatbot = () => {
                                     animate={{ opacity: 1 }}
                                     className="flex items-start gap-2.5"
                                 >
-                                    <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
-                                        <Bot className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                                    <div className="w-8 h-8 rounded-full border border-neutral-200 dark:border-neutral-700 overflow-hidden flex-shrink-0">
+                                        <img src={markImg} alt="AI" className="w-full h-full object-cover" />
                                     </div>
                                     <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-3 rounded-2xl rounded-tl-none shadow-sm">
                                         <Loader2 className="w-4 h-4 animate-spin text-neutral-400" />
@@ -120,7 +131,7 @@ const Chatbot = () => {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder="Ask about Mark..."
-                                className="flex-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 transition-all placeholder:text-neutral-400"
+                                className="flex-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 text-sm px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-neutral-500/20 dark:focus:ring-neutral-400/20 transition-all placeholder:text-neutral-400"
                             />
                             <button
                                 type="submit"
@@ -174,7 +185,7 @@ const Chatbot = () => {
                     ) : (
                         <>
                             <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-4 w-4">
-                                <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-500 border-2 border-white dark:border-neutral-900"></span>
+                                <span className="relative inline-flex rounded-full h-4 w-4 bg-neutral-900 dark:bg-neutral-100 border-2 border-white dark:border-neutral-900"></span>
                             </span>
                             <MessageSquare className="w-6 h-6 relative z-10" />
                         </>

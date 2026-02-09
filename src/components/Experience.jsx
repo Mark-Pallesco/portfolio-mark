@@ -51,17 +51,18 @@ const Experience = () => {
             location: "Dasmarinas City",
             year: "Oct 2023 – Nov 2023"
         },
-        {
-            role: "BS Information Technology",
-            company: "Technological University of the Philippines",
-            location: "Makati City",
-            year: "Aug 2019 – Aug 2023"
-        },
+
         {
             role: "Web Developer Intern",
             company: "Hacktiv Colab Inc.",
             location: "Makati City",
             year: "Mar 2023 – Jun 2023"
+        },
+        {
+            role: "BS Information Technology",
+            company: "Technological University of the Philippines",
+            location: "Makati City",
+            year: "Aug 2019 – Aug 2023"
         }
     ];
 

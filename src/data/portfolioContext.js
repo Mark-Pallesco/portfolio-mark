@@ -27,13 +27,28 @@ Mark is a Web Developer specializing in building high-impact platforms for keyno
 - Developed custom eCommerce solutions with payment integrations.
 - Created responsive sites using WordPress, Webflow, and Framer.
 
+**Founder & Lead Web Developer @ Fivision WebWorks (Jan 2026 – Present)**
+- Leading web development projects for clients.
+- Specializing in modern, high-performance websites.
+
+**Fullstack Web Developer @ Klued (Oct 2023 – Nov 2023)**
+- Fullstack development role.
+
 **Web Developer Intern @ Hacktiv Colab Inc. (Mar 2023 – Jun 2023)**
 - Developed dynamic web apps using React.js.
 - Managed app state with Redux Toolkit.
 - Translated designs into pixel-perfect UIs.
 
 ## PROJECTS
-1. **Accounting Information System**
+1. **Marianne Page**
+   - **Stack:** WordPress, Elementor, HTML, CSS, JS, GSAP
+   - **Desc:** Business coaching platform with resource distribution and lead generation flows.
+
+2. **Go Scaling**
+   - **Stack:** Webflow, HTML, CSS, JS, GSAP
+   - **Desc:** Strategic business scaling agency website.
+
+3. **Accounting Information System**
    - **Stack:** React JS, Node JS, Express, MySQL
    - **Role:** Front-end Developer
    - **Desc:** Capstone project. Built UI and integrated MySQL for backend. Practical system for a beneficiary company.
