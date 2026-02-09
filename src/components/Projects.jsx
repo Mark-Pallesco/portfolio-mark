@@ -68,10 +68,10 @@ const developmentProjects = [
         url: "https://mariannepage.com/"
     },
     {
-        title: "Go Scaling",
+        title: "Unlimited Scaling",
         description: "A strategic business scaling agency helping companies grow through systems and automation.",
         urlLabel: "Webflow • HTML • CSS • JS • GSAP",
-        url: "https://www.go-scaling.com/"
+        url: "http://unlimitedscaling.com/"
     },
     {
         title: "Accounting Information System",
