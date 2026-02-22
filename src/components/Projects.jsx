@@ -71,7 +71,7 @@ const developmentProjects = [
         title: "Unlimited Scaling",
         description: "A strategic business scaling agency helping companies grow through systems and automation.",
         urlLabel: "Webflow • GSAP • Automation",
-        url: "https://go-scaling.com/"
+        url: "https://unlimitedscaling.com/"
     },
     {
         title: "Phil Gilbert",
