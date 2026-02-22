@@ -62,63 +62,237 @@ import { X } from 'lucide-react';
 
 const developmentProjects = [
     {
-        title: "Marianne Page",
-        description: "A business coaching platform designed to help entrepreneurs build reliable and resilient businesses. Features include resource distribution, training program showcases, and lead generation flows.",
-        urlLabel: "WordPress • Elementor • HTML • CSS • JS • GSAP",
+        title: "Phil Gilbert",
+        description: "Change Leadership & AI Transformation platform for global executives.",
+        urlLabel: "WordPress • Elementor • GSAP",
         url: "#"
     },
     {
-        title: "Unlimited Scaling",
-        description: "A strategic business scaling agency helping companies grow through systems and automation.",
-        urlLabel: "Webflow • HTML • CSS • JS • GSAP",
+        title: "Call Me Boo",
+        description: "Creative talent agency showcase and digital brand identity.",
+        urlLabel: "WordPress • Web Design",
         url: "#"
     },
     {
-        title: "Accounting Information System",
-        description: "Collaborated as a front-end developer for a capstone project. Built the UI using React/Tailwind and integrated MySQL for backend support.",
-        urlLabel: "React JS • Node JS • Express • MySQL",
+        title: "Stephen J. Dietrich",
+        description: "Equipping teams and leaders with the courage to embrace change.",
+        urlLabel: "WordPress • Professional Services",
         url: "#"
     },
     {
-        title: "MovieLand",
-        description: "Developed a dynamic movie browsing app using React. Integrates a third-party API for up-to-date content with real-time search, filtering, and routing features.",
-        urlLabel: "React JS • Node JS • MySQL • Tailwind",
+        title: "VegiShake",
+        description: "E-commerce platform for nutritional supplements and wellness products.",
+        urlLabel: "WordPress • WooCommerce",
         url: "#"
     },
     {
-        title: "SaaS Analytics Dashboard",
-        description: "A comprehensive dashboard for tracking SaaS metrics, featuring real-time data visualization and user management.",
-        urlLabel: "Next.js • TypeScript • Recharts • Prisma",
+        title: "Seven Tea House",
+        description: "Premium retail experience for artisanal teas and cultural products.",
+        urlLabel: "WordPress • Retail",
         url: "#"
     },
     {
-        title: "E-learning Platform",
-        description: "A full-featured LMS with video course management, progress tracking, and interactive quizzes.",
-        urlLabel: "React JS • Supabase • Tailwind • Stripe",
+        title: "Terraxy",
+        description: "Environmental solutions and sustainable development consulting.",
+        urlLabel: "WordPress • Sustainability",
         url: "#"
     },
     {
-        title: "Real Estate Portal",
-        description: "Property listing website with advanced search filters, interactive maps, and agent contact forms.",
-        urlLabel: "Vue.js • NestJS • PostgreSQL • Google Maps API",
+        title: "Made Creative Co",
+        description: "Multi-disciplinary creative agency specializing in brand strategy.",
+        urlLabel: "WordPress • Creative Agency",
         url: "#"
     },
     {
-        title: "Fitness Tracker App",
-        description: "Mobile-responsive web app for tracking workouts, nutrition, and personal fitness goals.",
-        urlLabel: "React Native • Firebase • Redux • Expo",
+        title: "Rise Up London",
+        description: "Dynamic fitness agency providing specialized personal training services.",
+        urlLabel: "WordPress • Health & Fitness",
         url: "#"
     },
     {
-        title: "Portfolio Template",
-        description: "Modern, high-performance portfolio template for developers with built-in dark mode and animations.",
-        urlLabel: "Astro • Tailwind CSS • Framer Motion",
+        title: "Go Tours Hawaii",
+        description: "High-end tourism platform for luxury Hawaiian travel experiences.",
+        urlLabel: "WordPress • Booking Systems",
         url: "#"
     },
     {
-        title: "AI Image Generator",
-        description: "Web application integrating DALL-E API for generating and managing AI-powered artwork.",
-        urlLabel: "Next.js • OpenAI API • Cloudinary • MongoDB",
+        title: "Shelly's Light",
+        description: "Non-profit foundation dedicated to charitable initiatives and outreach.",
+        urlLabel: "WordPress • Charity",
+        url: "#"
+    },
+    {
+        title: "The Sales Machine",
+        description: "Strategic B2B sales growth and performance automation platform.",
+        urlLabel: "WordPress • Lead Generation",
+        url: "#"
+    },
+    {
+        title: "Udo Systems",
+        description: "Enterprise IT infrastructure and unified communication solutions.",
+        urlLabel: "WordPress • IT & Tech",
+        url: "#"
+    },
+    {
+        title: "PCS Northbase",
+        description: "Industrial construction services and project management dashboard.",
+        urlLabel: "WordPress • Industrial",
+        url: "#"
+    },
+    {
+        title: "Digital Marketing Pro",
+        description: "Full-service digital agency focused on performance marketing.",
+        urlLabel: "WordPress • Marketing",
+        url: "#"
+    },
+    {
+        title: "CleverPays",
+        description: "Digital payment solutions and secure fintech processing portal.",
+        urlLabel: "WordPress • Fintech",
+        url: "#"
+    },
+    {
+        title: "Canadian Cigarettes",
+        description: "National distribution and logistics management platform.",
+        urlLabel: "WordPress • Logistics",
+        url: "#"
+    },
+    {
+        title: "Urban Scape SEO",
+        description: "Data-driven SEO agency helping businesses dominate search rankings.",
+        urlLabel: "WordPress • SEO & Growth",
+        url: "#"
+    },
+    {
+        title: "Ecom XF",
+        description: "E-commerce scaling agency focused on high-conversion strategies.",
+        urlLabel: "WordPress • E-commerce",
+        url: "#"
+    },
+    {
+        title: "Michael Meyer Law",
+        description: "Professional legal representation and personal injury advocacy.",
+        urlLabel: "WordPress • Legal Services",
+        url: "#"
+    },
+    {
+        title: "Kandy Kingdom",
+        description: "E-commerce platform for international confectionery and candies.",
+        urlLabel: "WordPress • Retail",
+        url: "#"
+    },
+    {
+        title: "Amrit Sari Chatore",
+        description: "A showcase of authentic Indian cuisine and catering experiences.",
+        urlLabel: "WordPress • Hospitality",
+        url: "#"
+    },
+    {
+        title: "Tonkin Law",
+        description: "Specialized family and property law firm digital presence.",
+        urlLabel: "WordPress • Legal",
+        url: "#"
+    },
+    {
+        title: "Dev Wigs",
+        description: "Premium e-commerce platform for high-quality hair solutions.",
+        urlLabel: "WordPress • Fashion",
+        url: "#"
+    },
+    {
+        title: "LJI Advisory Group",
+        description: "Strategic financial advisory and business growth consulting.",
+        urlLabel: "WordPress • Consulting",
+        url: "#"
+    },
+    {
+        title: "Impactus Advisory",
+        description: "Helping businesses navigate complex management challenges.",
+        urlLabel: "WordPress • Business Strategy",
+        url: "#"
+    },
+    {
+        title: "Industry Leadr",
+        description: "Performance metrics and leadership development tools.",
+        urlLabel: "WordPress • Enterprise",
+        url: "#"
+    },
+    {
+        title: "Book Joel Steele",
+        description: "Speaking engagement booking platform for Joel Steele.",
+        urlLabel: "WordPress • Public Speaking",
+        url: "#"
+    },
+    {
+        title: "Dr. Reza Zahedi",
+        description: "Professional medical and dental services appointment portal.",
+        urlLabel: "WordPress • Healthcare",
+        url: "#"
+    },
+    {
+        title: "Urban Avas",
+        description: "Modern residential developments and urban living solutions.",
+        urlLabel: "Webflow • Real Estate",
+        url: "#"
+    },
+    {
+        title: "Circo Properties",
+        description: "Simplified living and residential property management platform.",
+        urlLabel: "Webflow • Property Tech",
+        url: "#"
+    },
+    {
+        title: "PowerSync AU",
+        description: "Advanced electrical systems and automation solutions.",
+        urlLabel: "Webflow • Automation",
+        url: "#"
+    },
+    {
+        title: "Artbook Showcase",
+        description: "Immersive digital portfolio for creative professionals.",
+        urlLabel: "Webflow • Portfolio",
+        url: "#"
+    },
+    {
+        title: "Hans Digital",
+        description: "Clean, high-performance UI/UX design and development.",
+        urlLabel: "Webflow • Agency",
+        url: "#"
+    },
+    {
+        title: "Shoe Care Pro",
+        description: "Direct-to-consumer premium footwear maintenance services.",
+        urlLabel: "Webflow • D2C Retail",
+        url: "#"
+    },
+    {
+        title: "Bloem Florals",
+        description: "Botanical design studio and high-end floral experiences.",
+        urlLabel: "Webflow • Creative Retail",
+        url: "#"
+    },
+    {
+        title: "Filtr Review",
+        description: "Digital product comparison and objective review platform.",
+        urlLabel: "Framer • Tech Reviews",
+        url: "#"
+    },
+    {
+        title: "Practical Darling",
+        description: "Curated lifestyle, wellness, and personal growth blog.",
+        urlLabel: "Framer • Lifestyle",
+        url: "#"
+    },
+    {
+        title: "Cultural Steps",
+        description: "Educational initiative focusing on cultural awareness.",
+        urlLabel: "Framer • Education",
+        url: "#"
+    },
+    {
+        title: "Jill Schulman",
+        description: "Personal branding and career coaching for executives.",
+        urlLabel: "Squarespace • Coaching",
         url: "#"
     }
 ];
