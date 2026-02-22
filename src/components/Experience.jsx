@@ -34,12 +34,6 @@ const ExperienceItem = ({ role, company, location, year }) => (
 const Experience = () => {
     const experiences = [
         {
-            role: "Founder & Lead Web Developer",
-            company: "Fivision WebWorks",
-            location: "WFH Setup",
-            year: "Jan 2026 – Present"
-        },
-        {
             role: "Web Developer",
             company: "Archicoders",
             location: "Imus City",

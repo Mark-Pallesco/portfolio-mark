@@ -5,15 +5,13 @@ import { Quote } from 'lucide-react';
 const Testimonials = () => {
     const testimonials = [
         {
-            name: "Mouss",
-            company: "Unlimited Scaling",
-            role: "Focus: Design & Speed",
+            name: "Verified Lead",
+            company: "Marketing Agency",
             text: "Mark is a rare talent who bridges the gap between design and development perfectly. He delivered three high-quality Figma concepts in just a couple of days and was incredibly proactive with our branding. Fast, creative, and highly professional—I highly recommend him."
         },
         {
-            name: "Rich",
-            company: "Stargazy Solutions",
-            role: "Focus: Technical Execution & Reliability",
+            name: "Client Manager",
+            company: "Software Solutions",
             text: "Mark is a total legend. He handled a complex site migration and custom GSAP animations with ease, even troubleshooting server-side issues on his own to get the job done. His technical skills are top-tier and the final result looks amazing. 10/10!"
         }
     ];
@@ -38,7 +36,7 @@ const Testimonials = () => {
                     <Quote className="w-8 h-8 opacity-50" />
                 </div>
 
-                <div className="relative z-10 min-h-[220px] flex items-center">
+                <div className="relative z-10 min-h-[180px] flex items-center">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -57,9 +55,6 @@ const Testimonials = () => {
                                 </h3>
                                 <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
                                     {testimonials[currentIndex].company}
-                                </p>
-                                <p className="text-[10px] text-neutral-400 dark:text-neutral-500 mt-0.5">
-                                    {testimonials[currentIndex].role}
                                 </p>
                             </div>
                         </motion.div>
