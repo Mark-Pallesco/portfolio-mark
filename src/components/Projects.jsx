@@ -62,6 +62,18 @@ import { X } from 'lucide-react';
 
 const developmentProjects = [
     {
+        title: "Marianne Page",
+        description: "A business coaching platform designed to help entrepreneurs build reliable and resilient businesses. Features include resource distribution and training program showcases.",
+        urlLabel: "WordPress • Elementor • GSAP",
+        url: "#"
+    },
+    {
+        title: "Unlimited Scaling",
+        description: "A strategic business scaling agency helping companies grow through systems and automation.",
+        urlLabel: "Webflow • GSAP • Automation",
+        url: "#"
+    },
+    {
         title: "Phil Gilbert",
         description: "Change Leadership & AI Transformation platform for global executives.",
         urlLabel: "WordPress • Elementor • GSAP",
