@@ -65,34 +65,114 @@ const developmentProjects = [
         title: "Marianne Page",
         description: "A business coaching platform designed to help entrepreneurs build reliable and resilient businesses. Features include resource distribution, training program showcases, and lead generation flows.",
         urlLabel: "WordPress • Elementor • HTML • CSS • JS • GSAP",
-        url: "https://mariannepage.com/"
+        url: "#"
     },
     {
         title: "Unlimited Scaling",
         description: "A strategic business scaling agency helping companies grow through systems and automation.",
         urlLabel: "Webflow • HTML • CSS • JS • GSAP",
-        url: "http://unlimitedscaling.com/"
+        url: "#"
     },
     {
         title: "Accounting Information System",
         description: "Collaborated as a front-end developer for a capstone project. Built the UI using React/Tailwind and integrated MySQL for backend support.",
-        urlLabel: "React JS • Node JS • Express • MySQL"
+        urlLabel: "React JS • Node JS • Express • MySQL",
+        url: "#"
     },
     {
         title: "MovieLand",
         description: "Developed a dynamic movie browsing app using React. Integrates a third-party API for up-to-date content with real-time search, filtering, and routing features.",
-        urlLabel: "React JS • Node JS • MySQL • Tailwind"
+        urlLabel: "React JS • Node JS • MySQL • Tailwind",
+        url: "#"
+    },
+    {
+        title: "SaaS Analytics Dashboard",
+        description: "A comprehensive dashboard for tracking SaaS metrics, featuring real-time data visualization and user management.",
+        urlLabel: "Next.js • TypeScript • Recharts • Prisma",
+        url: "#"
+    },
+    {
+        title: "E-learning Platform",
+        description: "A full-featured LMS with video course management, progress tracking, and interactive quizzes.",
+        urlLabel: "React JS • Supabase • Tailwind • Stripe",
+        url: "#"
+    },
+    {
+        title: "Real Estate Portal",
+        description: "Property listing website with advanced search filters, interactive maps, and agent contact forms.",
+        urlLabel: "Vue.js • NestJS • PostgreSQL • Google Maps API",
+        url: "#"
+    },
+    {
+        title: "Fitness Tracker App",
+        description: "Mobile-responsive web app for tracking workouts, nutrition, and personal fitness goals.",
+        urlLabel: "React Native • Firebase • Redux • Expo",
+        url: "#"
+    },
+    {
+        title: "Portfolio Template",
+        description: "Modern, high-performance portfolio template for developers with built-in dark mode and animations.",
+        urlLabel: "Astro • Tailwind CSS • Framer Motion",
+        url: "#"
+    },
+    {
+        title: "AI Image Generator",
+        description: "Web application integrating DALL-E API for generating and managing AI-powered artwork.",
+        urlLabel: "Next.js • OpenAI API • Cloudinary • MongoDB",
+        url: "#"
     }
 ];
 
 const designProjects = [
     {
         title: "Keynote Speaker Portfolio",
-        description: "UI/UX design for a professional speaker's personal brand website, focusing on high-conversion layout and typography."
+        description: "UI/UX design for a professional speaker's personal brand website, focusing on high-conversion layout and typography.",
+        url: "#"
     },
     {
         title: "E-commerce Dashboard",
-        description: "Clean administrator interface design for managing products and orders, created in Figma."
+        description: "Clean administrator interface design for managing products and orders, created in Figma.",
+        url: "#"
+    },
+    {
+        title: "FinTech Mobile App",
+        description: "User-centric design for a personal finance management app with focus on intuitive navigation and data security.",
+        url: "#"
+    },
+    {
+        title: "Healthcare Wellness App",
+        description: "Modern UI for a healthcare app facilitating patient-doctor communication and health tracking.",
+        url: "#"
+    },
+    {
+        title: "Travel Booking UI",
+        description: "Comprehensive design system for a travel platform, emphasizing visual storytelling and easy booking flows.",
+        url: "#"
+    },
+    {
+        title: "Social Networking Concept",
+        description: "Innovative social platform design exploring new ways of community engagement and content sharing.",
+        url: "#"
+    },
+    {
+        title: "Gaming Community Hub",
+        description: "Dark-themed dashboard design for a gaming community, featuring social integration and news feeds.",
+        url: "#"
+    },
+    {
+        title: "Real Estate Landing Page",
+        description: "High-converting landing page design for luxury real estate, focusing on premium visual aesthetics.",
+        url: "#"
+    },
+    {
+        title: "SaaS Branding & Landing Page",
+        description: "Complete branding package and landing page design for a B2B SaaS product.",
+        url: "#"
+    },
+    {
+        title: "Educational Platform Design",
+        description: "Modern and accessible design for an online learning platform, focusing on student engagement.",
+        url: "#"
     }
 ];
 
