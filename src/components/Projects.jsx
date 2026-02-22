@@ -204,6 +204,13 @@ const ProjectModal = ({ isOpen, onClose }) => (
                     </div>
 
                     <div className="overflow-y-auto pb-6 md:pb-8 px-6 md:px-8 space-y-12 bg-white dark:bg-neutral-900">
+                        {/* Professional Note */}
+                        <div className="mt-8 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
+                            <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed italic">
+                                <strong>Note:</strong> Some project links are kept private for confidentiality. Detailed walkthroughs and live demonstrations of all projects can be provided during a discovery call or technical interview.
+                            </p>
+                        </div>
+
                         {/* Modal Development Section */}
                         <section>
                             <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-4 z-10 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-neutral-100 dark:border-neutral-800/50">Development</h3>
