@@ -203,10 +203,10 @@ const ProjectModal = ({ isOpen, onClose }) => (
                         </button>
                     </div>
 
-                    <div className="overflow-y-auto p-6 md:p-8 space-y-12 bg-white dark:bg-neutral-900">
+                    <div className="overflow-y-auto pb-6 md:pb-8 px-6 md:px-8 space-y-12 bg-white dark:bg-neutral-900">
                         {/* Modal Development Section */}
                         <section>
-                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-2 z-10">Development</h3>
+                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-4 z-10 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-neutral-100 dark:border-neutral-800/50">Development</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {developmentProjects.map((project, index) => (
                                     <ProjectCard key={index} {...project} />
@@ -216,7 +216,7 @@ const ProjectModal = ({ isOpen, onClose }) => (
 
                         {/* Modal Design Section */}
                         <section>
-                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-2 z-10">Design</h3>
+                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-4 z-10 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-neutral-100 dark:border-neutral-800/50">Design</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {designProjects.map((project, index) => (
                                     <DesignCard key={index} {...project} />
