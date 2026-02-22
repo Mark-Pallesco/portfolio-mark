@@ -176,66 +176,97 @@ const designProjects = [
     }
 ];
 
-const ProjectModal = ({ isOpen, onClose }) => (
-    <AnimatePresence>
-        {isOpen && (
-            <>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={onClose}
-                    className="fixed inset-0 bg-neutral-900/20 dark:bg-black/40 backdrop-blur-sm z-50"
-                />
-                <motion.div
-                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                    className="fixed inset-0 m-auto w-full max-w-4xl h-[85vh] bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col border border-neutral-100 dark:border-neutral-800"
-                >
-                    <div className="p-6 border-b border-neutral-100 dark:border-neutral-800 flex justify-between items-center bg-white/50 dark:bg-neutral-900/50 backdrop-blur-md sticky top-0 z-10">
-                        <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50 tracking-tight">All Projects</h2>
-                        <button
-                            onClick={onClose}
-                            className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
-                    </div>
+const ProjectModal = ({ isOpen, onClose }) => {
+    const [activeTab, setActiveTab] = useState('development');
 
-                    <div className="overflow-y-auto pb-6 md:pb-8 px-6 md:px-8 space-y-12 bg-white dark:bg-neutral-900">
-                        {/* Professional Note */}
-                        <div className="mt-8 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                            <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed italic">
-                                <strong>Note:</strong> Some project links are kept private for confidentiality. Detailed walkthroughs and live demonstrations of all projects can be provided during a discovery call or technical interview.
-                            </p>
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
+                        className="fixed inset-0 bg-neutral-900/20 dark:bg-black/40 backdrop-blur-sm z-50"
+                    />
+                    <motion.div
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                        className="fixed inset-0 m-auto w-full max-w-4xl h-[85vh] bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col border border-neutral-100 dark:border-neutral-800"
+                    >
+                        {/* Header */}
+                        <div className="p-4 md:p-6 border-b border-neutral-100 dark:border-neutral-800 flex justify-between items-center bg-white/50 dark:bg-neutral-900/50 backdrop-blur-md sticky top-0 z-10">
+                            <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50 tracking-tight">Portfolio Archive</h2>
+                            <button
+                                onClick={onClose}
+                                className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
                         </div>
 
-                        {/* Modal Development Section */}
-                        <section>
-                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-4 z-10 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-neutral-100 dark:border-neutral-800/50">Development</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {developmentProjects.map((project, index) => (
-                                    <ProjectCard key={index} {...project} />
-                                ))}
-                            </div>
-                        </section>
+                        {/* Tabs Navigation */}
+                        <div className="flex gap-4 px-6 md:px-8 py-4 border-b border-neutral-100 dark:border-neutral-800">
+                            {['development', 'design'].map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`text-xs font-bold uppercase tracking-widest pb-1 transition-all relative ${activeTab === tab
+                                        ? "text-neutral-900 dark:text-neutral-50"
+                                        : "text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300"
+                                        }`}
+                                >
+                                    {tab}
+                                    {activeTab === tab && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-neutral-900 dark:bg-neutral-50"
+                                        />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
 
-                        {/* Modal Design Section */}
-                        <section>
-                            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-200 tracking-wide uppercase mb-6 sticky top-0 bg-white dark:bg-neutral-900 py-4 z-10 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-neutral-100 dark:border-neutral-800/50">Design</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {designProjects.map((project, index) => (
-                                    <DesignCard key={index} {...project} />
-                                ))}
+                        <div className="overflow-y-auto flex-1 p-6 md:p-8 bg-white dark:bg-neutral-900 scroll-smooth">
+                            {/* Professional Note */}
+                            <div className="mb-8 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
+                                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed italic">
+                                    <strong>Confidentiality Note:</strong> Some project links are restricted. In-depth walkthroughs and technical demonstrations are available upon request during discovery calls or interviews.
+                                </p>
                             </div>
-                        </section>
-                    </div>
-                </motion.div>
-            </>
-        )}
-    </AnimatePresence>
-);
+
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeTab}
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    {activeTab === 'development' ? (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            {developmentProjects.map((project, index) => (
+                                                <ProjectCard key={index} {...project} />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            {designProjects.map((project, index) => (
+                                                <DesignCard key={index} {...project} />
+                                            ))}
+                                        </div>
+                                    )}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </motion.div>
+                </>
+            )}
+        </AnimatePresence>
+    );
+};
 
 const Projects = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
