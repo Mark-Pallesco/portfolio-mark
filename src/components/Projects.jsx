@@ -57,7 +57,7 @@ const DesignCard = ({ title, description }) => (
 );
 
 import { AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 const developmentProjects = [
@@ -178,6 +178,17 @@ const designProjects = [
 
 const ProjectModal = ({ isOpen, onClose }) => {
     const [activeTab, setActiveTab] = useState('development');
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
     return (
         <AnimatePresence>
