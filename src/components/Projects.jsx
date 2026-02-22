@@ -290,6 +290,12 @@ const developmentProjects = [
         url: "#"
     },
     {
+        title: "Filtr Reputation",
+        description: "Review collection and reputation management platform for modern brands.",
+        urlLabel: "Framer • SaaS Tool",
+        url: "#"
+    },
+    {
         title: "Jill Schulman",
         description: "Personal branding and career coaching for executives.",
         urlLabel: "Squarespace • Coaching",
