@@ -62,6 +62,12 @@ import { X } from 'lucide-react';
 
 const developmentProjects = [
     {
+        title: "Demolition Australia",
+        description: "Professional demolition, excavation, land clearing, and site preparation services across Sydney, focused on safety and quality.",
+        urlLabel: "WordPress • Industrial Services",
+        url: "http://demoaustralia.com.au/"
+    },
+    {
         title: "Marianne Page",
         description: "A business coaching platform designed to help entrepreneurs build reliable and resilient businesses. Features include resource distribution and training program showcases.",
         urlLabel: "WordPress • Elementor • GSAP",
@@ -497,7 +503,7 @@ const Projects = () => {
                         whileInView="show"
                         viewport={{ once: true, margin: "-20px" }}
                     >
-                        {developmentProjects.slice(0, 2).map((project, index) => (
+                        {developmentProjects.slice(0, 3).map((project, index) => (
                             <ProjectCard key={index} {...project} />
                         ))}
                     </motion.div>
@@ -512,7 +518,7 @@ const Projects = () => {
                         whileInView="show"
                         viewport={{ once: true, margin: "-20px" }}
                     >
-                        {designProjects.slice(0, 2).map((project, index) => (
+                        {designProjects.slice(0, 3).map((project, index) => (
                             <DesignCard key={index} {...project} />
                         ))}
                     </motion.div>
