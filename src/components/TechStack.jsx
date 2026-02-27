@@ -60,7 +60,7 @@ const TechStack = () => {
 
             <TechGroup
                 title="WordPress / CMS"
-                items={["WordPress", "Elementor", "WooCommerce", "Divi", "Framer", "Webflow"]}
+                items={["WordPress", "Elementor", "WooCommerce", "Divi", "Framer", "Webflow", "SquareSpace"]}
             />
 
             <TechGroup
